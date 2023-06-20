@@ -6,6 +6,10 @@ export default {
   content: ["./src/**/*.{tsx,js,ts}"],
   theme: {
     extend: {
+      height: {
+        90: "90svh",
+        "screen-s": "100svh",
+      },
       textColor: {
         blue: {
           100: "hsl(229, 8%, 60%)",
@@ -19,6 +23,7 @@ export default {
         blue: {
           100: "hsl(229, 8%, 60%)",
           200: "hsl(231, 69%, 60%)",
+          300: "hsl(229, 31%, 21%)",
         },
         "mobile-menu": "hsla(229, 31%, 21%, 0.952)  ",
       },
