@@ -5,9 +5,11 @@ type Props = {
   classProp: string;
 };
 
-const BrowserCard = ({name, version, imgUrl, classProp}:Props) => {
+const BrowserCard = ({ name, version, imgUrl, classProp }: Props) => {
   return (
-    <div className={`${classProp} browser-card max-w-fit flex flex-col items-center shadow-lg p-6 rounded gap-9 h-fit`}>
+    <div
+      className={`${classProp} browser-card max-w-fit flex flex-col items-center shadow-xl p-6 rounded gap-9 h-fit`}
+    >
       <figure className="flex flex-col items-center gap-4">
         <div>
           <img src={imgUrl} alt="" />
@@ -18,7 +20,7 @@ const BrowserCard = ({name, version, imgUrl, classProp}:Props) => {
         </figcaption>
       </figure>
 
-      <button className="px-5 py-3 text-white bg-blue-200 rounded">
+      <button className="px-5 py-3 text-white bg-blue-200 rounded hover:bg-transparent hover:text-blue-300 outline-2 outline-blue-200">
         Add and install to extension
       </button>
     </div>

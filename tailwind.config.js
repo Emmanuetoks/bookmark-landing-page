@@ -15,8 +15,12 @@ export default {
           100: "hsl(229, 8%, 60%)",
           200: "hsl(229, 31%, 21%)",
           300: "hsl(231, 69%, 60%)",
+          400: "hsl(240, 1%, 17%)"
         },
         white: "#ffff",
+        red: {
+          100: "hsl(0, 94%, 66%)"
+        }
       },
       backgroundColor: {
         red: "hsl(0, 94%, 66%)",
@@ -24,6 +28,7 @@ export default {
           100: "hsl(229, 8%, 60%)",
           200: "hsl(231, 69%, 60%)",
           300: "hsl(229, 31%, 21%)",
+          400: "hsl(240, 1%, 17%)"
         },
         "mobile-menu": "hsla(229, 31%, 21%, 0.952)  ",
       },
@@ -31,10 +36,11 @@ export default {
         sans: ["Rubik", defaultTheme],
       },
 
-      borderColor: {
+      outlineColor: {
         blue: {
           100: "hsl(229, 8%, 60%)",
           200: "hsl(231, 69%, 60%)",
+          400: "hsl(240, 1%, 17%)"
         },
       },
       // translate: {

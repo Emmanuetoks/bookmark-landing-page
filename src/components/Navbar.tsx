@@ -57,7 +57,7 @@ const Navbar = () => {
 
       <div
         data-menu-state="closed"
-        className="navbar__menu-sm flex flex-col md:hidden min-h-full text-4xl absolute inset-0 w-full z-10 pt-16 bg-mobile-menu transition duration-500"
+        className="navbar__menu-sm flex flex-col md:hidden min-h-full text-4xl absolute inset-0 z-10 pt-16 bg-mobile-menu transition duration-500"
         ref={mobileMenu}
       >
         <ul className="navbar__links flex items-center flex-col h-full">
@@ -78,12 +78,12 @@ const Navbar = () => {
         </ul>
 
         <div className="flex gap-5 justify-center pb-10">
-          <div>
+          <a>
             <img src={twitterLogo} />
-          </div>
-          <div>
+          </a>
+          <a>
             <img src={facebookLogo} />
-          </div>
+          </a>
         </div>
       </div>
       <button

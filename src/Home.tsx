@@ -11,6 +11,7 @@ import choromeLogo from "./assets/logo/logo-chrome.svg";
 import fireFoxLogo from "./assets/logo/logo-firefox.svg";
 import opera from "./assets/logo/logo-opera.svg";
 import BrowserCard from "./components/BrowserCard";
+import ContactSection from "./components/ContactSection";
 
 const Home = () => {
   const sections = useRef([]);
@@ -35,7 +36,7 @@ const Home = () => {
 
     const obsOptions = {
       root: null,
-      treshold: 0.15,
+      treshold: 0.3,
     };
     const observer: IntersectionObserver = new IntersectionObserver(
       revealSection,
@@ -49,7 +50,7 @@ const Home = () => {
 
   return (
     <>
-      <header className="header h-screen-s md:h-90 overflow-x-hidden">
+      <header className="header min-h-screen-s md:h-90 overflow-x-hidden">
         <Navbar />
 
         <div className="header__intro px-9 md:pt-16 pt-6 md:pl-24 md:pr-10 flex flex-col-reverse md:flex-row items-center">
@@ -63,15 +64,15 @@ const Home = () => {
               for free.
             </p>
 
-            <div className="header__intro-download-buttons space-x-4">
+            <div className="header__intro-download-buttons flex gap-4 md:justify-start justify-center">
               <a>
-                <button className="px-4 py-3 bg-blue-200 text-white rounded border-2 font-medium border-blue-200 hover:bg-transparent hover:text-blue-300">
+                <button className="px-4 py-3 bg-blue-200  text-white rounded outline-2 font-medium outline-blue-200 hover:bg-transparent hover:text-blue-300">
                   Get it on Chrome
                 </button>
               </a>
 
               <a>
-                <button className="px-4 py-3 text-blue-200 font-medium hover:bg-transparent">
+                <button className="px-4 py-3 text-blue-200 bg-blue-100 font-medium hover:bg-transparent hover:outline-2 outline-blue-400 rounded">
                   Get it on Firefox
                 </button>
               </a>
@@ -109,27 +110,28 @@ const Home = () => {
             version="46"
           />
         </CtaDownloadSection>
-
         <FAQSection addtoRef={addSection} />
+        <ContactSection />
       </main>
+
       <footer className="footer flex flex-col gap-6 justify-between md:flex-row py-8 px-10 bg-blue-300 items-center">
         <div className="flex flex-col gap-6 md:flex-row">
           <div>
             <img src={Logo} />
           </div>
           <ul className="flex flex-col gap-5 items-center md:flex-row">
-            <li className="uppercase font-normal text-blue-100">features</li>
-            <li className="uppercase font-normal text-blue-100">pricing</li>
-            <li className="uppercase font-normal text-blue-100">contact</li>
+            <li className="uppercase text-white font-thin">features</li>
+            <li className="uppercase text-white font-thin">pricing</li>
+            <li className="uppercase text-white font-thin">contact</li>
           </ul>
         </div>
         <div className="flex flex-col gap-5 md:flex-row ">
-          <div>
+          <a>
             <img src={twitterLogo} />
-          </div>
-          <div>
+          </a>
+          <a>
             <img src={facebookLogo} />
-          </div>
+          </a>
         </div>
       </footer>
     </>
