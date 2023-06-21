@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .navbar__link {
+    @apply uppercase text-blue-200;
+  }
+
+  #root {
+    @apply font-sans;
+  }
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: local("Rubik") url("../public/fonts/Rubik-VariableFont_wght.ttf");
+}
+
+:root {
+}
+
+/* CSS Resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  outline: 0 solid transparent;
+  border: 0 solid transparent;
+}
+
+
+/* Component styling */
+.header__hero-img::after {
+  content: '';
+  position: absolute;
+  width: 50rem;
+  height: 15rem;
+  /* top: 40%; */
+  transform: translateX(20%);
+  z-index: -2;
+  display: block;
+  border-bottom-left-radius: 150px;
+  @apply bg-blue-200;
+}
+
+.answer--hidden {
+  height: 0;
+  opacity: 0;
+}
+
+.navbar__menu-sm[data-menu-state = 'closed'] {
+  transform: translateY(-120%);
+}
+
+.features__intro-text {
+  container-type: inline-size;
+  container-name: features-intro-text;
+}
+
+.section {
+  transition: transform 500ms ease;
+}
+
+.header {
+  /* height: 90svh; */
+}
+
+.section--hidden {
+  opacity: 0;
+  transform: translateY(50%);
+}
+
+.features__img::after  {
+  content: '';
+  position: absolute;
+  width: 40rem;
+  height: 13rem;
+  top: 40%;
+  transform: translateX(-50%);
+  z-index: -2;
+  display: block;
+  border-bottom-right-radius: 150px;
+  @apply bg-blue-200;
+}
+
+/* The containser query looks at the size  of the container rather that the size of the viewport as in media queries */
+
+/* @container features-intro-text (width > 999px) {
+
+} */
