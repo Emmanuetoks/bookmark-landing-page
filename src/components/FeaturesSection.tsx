@@ -86,7 +86,7 @@ export function FeatureTab({ src, header, text }: featureTab) {
           {header}
         </h4>
         <p className="text-blue-100">{text}</p>
-        <MoreInfoBtn link="1" />
+        <MoreInfoBtn />
       </div>
     </>
   );
