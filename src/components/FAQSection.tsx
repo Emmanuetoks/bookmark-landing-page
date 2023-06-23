@@ -1,6 +1,5 @@
-import { MouseEventHandler, MouseEvent, RefCallback, useRef } from "react";
+import { MouseEventHandler, RefCallback, useRef } from "react";
 import { Props } from "../vite-env";
-import { AiFillAccountBook } from "react-icons/ai";
 
 type faqProp = {
   question: string;
@@ -15,8 +14,8 @@ const FAQSection = ({ addtoRef }: Props) => {
     faq.current.includes(el) || faq.current.push(el);
   };
 
-  const showAnswer: MouseEventHandler = (e: MouseEvent) => {
-    const target: EventTarget | Node = e.target;
+  const showAnswer: MouseEventHandler = (e:React.BaseSyntheticEvent) => {
+    const target = e.target;
     target.classList.toggle("faq__dropdown--active");
     faq.current[target?.id]?.classList.toggle("faq__dropdown--hidden");
     console.log(target.id);
