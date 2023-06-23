@@ -8,8 +8,8 @@ type toggleMenuType = (e: React.SyntheticEvent) => void;
 
 const Navbar = () => {
   const mobileMenu = useRef<HTMLDivElement | null>(null);
-  // const menuBtn = useRef<HTMLButtonElement | null>(null);
   const [menuState, setMenuState] = useState("closed");
+
   const toggleMenu: toggleMenuType = () => {
     const menuState = mobileMenu.current?.dataset.menuState;
     const body = document.querySelector("body") as HTMLBodyElement;
@@ -33,10 +33,10 @@ const Navbar = () => {
   return (
     <nav className="navbar flex justify-between items-center px-9 py-4 md:px-24">
       <div className="navbar__logo z-30">
-        <img src={Logo} alt="logo" />
+        <img src={Logo} alt="logo" className="logo" />
       </div>
 
-      <div className="navbar__menu-md hidden md:block">
+      <div className="navbar__menu-normal hidden md:block">
         <ul className="navbar__links flex space-x-8 items-center">
           <li className="navbar__link">
             <a>Home</a>
@@ -48,7 +48,7 @@ const Navbar = () => {
             <a>contact</a>
           </li>
           <li className="navbar__link">
-            <button className="uppercase bg-red text-white px-6 py-2 rounded">
+            <button className="uppercase bg-red text-white px-6 py-2 rounded hover:bg-white hover:text-red-100 outline-2 outline-red">
               login
             </button>
           </li>
@@ -57,10 +57,10 @@ const Navbar = () => {
 
       <div
         data-menu-state="closed"
-        className="navbar__menu-sm flex flex-col md:hidden min-h-full text-4xl absolute inset-0 z-10 pt-16 bg-mobile-menu transition duration-500"
+        className="navbar__menu-mobile flex flex-col md:hidden min-h-full text-3xl absolute inset-0 z-10 pt-16 bg-mobile-menu transition duration-500 tracking-wide"
         ref={mobileMenu}
       >
-        <ul className="navbar__links flex items-center flex-col h-full">
+        <ul className="navbar__links flex items-center flex-col h-full pt-10">
           <li className="navbar__link w-3/5 text-center font-light py-6 text-white">
             <a>Home</a>
           </li>
@@ -71,7 +71,7 @@ const Navbar = () => {
             <a>contact</a>
           </li>
           <li className="navbar__link w-3/5 text-center py-6 text-white font-normal">
-            <button className="uppercase bg-transparent text-white px-6 py-2 border-4 border-solid border-white w-full rounded">
+            <button className="uppercase bg-transparent text-white px-6 py-2 border-4 border-solid border-white w-full rounded-md">
               login
             </button>
           </li>

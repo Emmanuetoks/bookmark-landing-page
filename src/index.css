@@ -4,17 +4,58 @@
 
 @layer base {
   a {
-    @apply cursor-pointer
+    @apply cursor-pointer;
+  }
+
+  input {
+    @apply outline-0;
   }
 }
 
 @layer components {
-  .navbar__link {
-    @apply uppercase text-blue-200;
+  .features__tab::after {
+    content: "";
+    width: 50%;
+    display: block;
+    position: relative;
+    height: 0.1px;
+    top: 100%;
+  }
+
+  .features__tab {
+    border-top: 1px solid;
+    @apply border-blue-100 md:border-0;
+  }
+
+  .navbar__menu-normal .navbar__link {
+    @apply uppercase text-blue-200 hover:text-red-100;
   }
 
   #root {
     @apply font-sans overflow-y-hidden;
+  }
+
+  .active-tab::after {
+    height: 5px !important;
+    @apply bg-red !important;
+    transform: translateX(50%) translateY(250%);
+  }
+
+  @media (min-width: 769px) {
+
+    .features .active-tab::after {
+      width: 100%;
+      transform: translateY(250%);
+    }
+
+    .features__page .active-tab::after {
+      width: 100%;
+      transform: translateY(-320%);
+    }
+  }
+
+  .active-tab {
+    @apply text-blue-200 !important;
   }
 }
 
@@ -60,7 +101,7 @@ button {
 
 .faq-section__answer {
   transition: height 500ms ease-in;
-  color: hsla(229, 8%, 60%, 0.678);
+  color: hsl(230, 3%, 37%);
 }
 
 .faq__dropdown--hidden {
@@ -72,37 +113,21 @@ button {
   opacity: 0;
 }
 
-.features__tab::after {
-  content: '';
-  width: calc(100%);
-  display: block;
-  position: relative;
-  height: 0.1px;
-  top: 100%;
-}
-
-@media (min-width: 768px) {
-  .features__tab::after {
-    width: calc(100% + 1.25rem);
-  }
-}
-
 .faq-section__dropdown-button {
   aspect-ratio: 3/2;
   background-image: url("./assets/icons/icon-arrow.svg");
-  transition: transform 300ms ease-in;
 }
 
 .faq__dropdown--active {
   transform: rotate(180deg);
 }
 
-.navbar__menu-sm[data-menu-state="closed"] {
+.navbar__menu-mobile[data-menu-state="closed"] {
   transform: translateY(-120%);
 }
 
 .section {
-  transition: transform 1000ms ease-in;
+  transition: transform 1000ms ease;
 }
 
 .section--hidden {
@@ -121,4 +146,60 @@ button {
   display: block;
   border-bottom-right-radius: 150px;
   @apply bg-blue-200;
+}
+
+.faq-section__list > li {
+  border-block-start: 1px solid;
+  @apply border-blue-100;
+}
+
+.faq-section__list > li:last-child {
+  border-block-end: 1px solid;
+  @apply border-blue-100;
+}
+
+.wrong-email::before {
+  content: "";
+  background-image: url("./assets/icons/icon-error.svg");
+  width: 20px;
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  display: block;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+}
+
+.wrong-email::after {
+  content: "whoops make sure it's an email!";
+  position: absolute;
+  @apply bg-red text-white text-xs text-left italic rounded-br rounded-bl;
+  width: 101%;
+  transform: translateX(-0.5%);
+  padding: 2px 5px;
+  top: 103%;
+  left: 0;
+}
+
+.wrong-email {
+  @apply outline outline-2 outline-red;
+}
+
+.wrong-email > input {
+  border-radius: 0;
+}
+
+.navbar__menu-mobile .navbar__link {
+  border-top: 0.5px solid gray;
+  @apply uppercase;
+}
+
+.features > nav::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  display: block;
+  top: 100%;
+  @apply bg-blue-100 after:top-full !important;
 }
