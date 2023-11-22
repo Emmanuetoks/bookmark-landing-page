@@ -43,7 +43,7 @@ const FAQSection = ({ addtoRef }: Props) => {
             addFaq={addFaq}
             showAnswer={showAnswer}
             question="What is bookmark"
-            answer="fuck you"
+            answer="How are you doing?"
             answerId="0"
           />
           <FAQ
